@@ -1,9 +1,18 @@
 def main(argv):
-  # このコードは引数と標準出力を用いたサンプルコードです。
-  # このコードは好きなように編集・削除してもらって構いません。
-  # ---
-  # This is a sample code to use arguments and outputs.
-  # Edit and remove this code as you like.
-
-  for i, v in enumerate(argv):
-    print("argv[{0}]: {1}".format(i, v))
+    num = int(argv[0])
+    old_str = "1"
+    for i in range(1,num):
+        new_str =  ""
+        current_letter = old_str[0]
+        current_count = 0
+        for letter in old_str:
+            if current_letter == letter:
+                current_count += 1
+            else:
+                new_str = new_str + str(current_count) + current_letter
+                current_letter = letter
+                current_count = 1
+        else:
+            new_str = new_str + str(current_count) + current_letter
+        old_str = new_str
+    print(old_str)
